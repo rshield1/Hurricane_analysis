@@ -21,6 +21,23 @@ deaths = [90,4000,16,3103,179,184,408,682,5,1023,43,319,688,259,37,11,2068,269,3
 
 # write your update damages function here:
 
+def convert_damages_data(damages):
+
+  conversion = {"M": 1000000, "B": 1000000000}
+  updated_damages = []
+
+  for damage in damages:
+    if damage == "Damages not recorded":
+      updated_damages.append(damage)
+    if damage[-1] == 'M':
+      updated_damages.append(float(damage.strip('M'))*conversion["M"])
+    if damage[-1] == 'B':
+      updated_damages.append(float(damage.strip('B'))*conversion["B"])
+  print(updated_damages)
+  return updated_damages
+
+convert_damages_data(damages)
+
 
 
 
