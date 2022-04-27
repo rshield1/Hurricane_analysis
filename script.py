@@ -45,6 +45,19 @@ convert_damages_data(damages)
 
 
 # write your construct hurricane dictionary function here:
+def create_dictionary(names, months, years, max_sustained_winds, areas_affected, updated_damages, deaths):
+    hurricanes = {}
+    num_hurricanes = len(names)
+
+    for i in range(num_hurricanes):
+        hurricanes[names[i]] = {"Name": names[i],
+                          "Month": months[i],
+                          "Year": years[i],
+                          "Max Sustained Wind": max_sustained_winds[i],
+                          "Areas Affected": areas_affected[i],
+                          "Damage": updated_damages[i],
+                          "Deaths": deaths[i]}
+    return hurricanes
 
 
 
